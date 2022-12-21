@@ -1,5 +1,7 @@
 mod users;
 use users::*;
+mod provider;
+pub use provider::*;
 
 #[cfg(test)]
 mod tests {

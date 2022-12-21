@@ -4,7 +4,7 @@ use common::axum::http::StatusCode;
 use common::axum::response::IntoResponse;
 
 use crate::users::dtos::RegisterNewUserResponseDto;
-use crate::users::features::RegisterNewUserRequestDto;
+use crate::users::features::{RegisterNewUserRequestDto, RegisterNewUserCommand};
 
 
 pub fn routes(base_route: &str) -> Router {
@@ -16,7 +16,10 @@ pub fn routes(base_route: &str) -> Router {
 async fn register_user(
     Json(req): Json<RegisterNewUserRequestDto>,
     ) -> impl IntoResponse  {
-        let user = RegisterNewUserResponseDto { id: todo!(), email: todo!() };
-        (StatusCode::CREATED, Json(user))
+        let cmd = RegisterNewUserCommand::from(req);
+
+        todo!()
+        // let user = RegisterNewUserResponseDto::from(result);
+        // (StatusCode::CREATED, Json(user))
 
 }

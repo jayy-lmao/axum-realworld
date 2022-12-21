@@ -9,6 +9,14 @@ edition = "2021"
 shared-string = "0.1.7"
 serde = "1.0.150"
 serde_derive = "1.0.150"
-thiserror = "1.0.37"
+thiserror = "1.0.38"
 axum = "0.6.1"
-
+sqlx = { version = "0.6.2", features = [
+  "runtime-tokio-rustls",
+  "postgres",
+  "migrate",
+  "chrono",
+  "uuid",
+  "offline",
+] }
+async-trait = "0.1.60"
