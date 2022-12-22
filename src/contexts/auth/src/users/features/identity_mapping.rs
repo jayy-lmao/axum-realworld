@@ -6,9 +6,9 @@ use crate::users::features::register_new_user::dtos::v1::RegisterNewUserRequestD
 impl From<RegisterNewUserRequestDto> for RegisterNewUserCommand {
     fn from(dto: RegisterNewUserRequestDto) -> Self {
         Self {
-            username: SharedString::from(dto.username),
-            email: SharedString::from(dto.email),
-            password: SharedString::from(dto.password),
+            username: String::from(dto.username),
+            email: String::from(dto.email),
+            password: String::from(dto.password),
         }
     }
 }

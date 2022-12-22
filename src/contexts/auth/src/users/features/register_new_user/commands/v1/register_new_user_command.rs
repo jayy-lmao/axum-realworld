@@ -1,6 +1,5 @@
-use common::*;
 pub struct RegisterNewUserCommand {
-    pub username: SharedString,
-    pub email: SharedString,
-    pub password: SharedString,
+    pub username: String,
+    pub email: String,
+    pub password: String,
 }

@@ -1,8 +1,7 @@
 use common::*;
 
 use crate::users::dtos::RegisterNewUserResponseDto;
-use crate::users::exceptions::AuthContextError;
-use crate::{users::features::RegisterNewUserRequestDto, AuthProvider};
+use crate::AuthProvider;
 
 use super::RegisterNewUserCommand;
 

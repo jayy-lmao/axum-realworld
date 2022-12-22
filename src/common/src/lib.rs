@@ -15,8 +15,8 @@ mod errors {
 pub enum ApplicationError {
     #[error("[Application error]")]
     DbError(String),
-    #[error("[Bad user input]")]
-    BadInput(String),
+    #[error("[Validation Error] {0}")]
+    Validation(String),
     #[error("[Not found error] {0}")]
     NotFound(String),
     #[error("[Parsing error]")]
@@ -38,6 +38,16 @@ pub trait CommandHandler<T> {
     async fn command(&self, cmd: T) -> AppResult<Self::Output >;
 }
 }
+
+mod validator {
+    use crate::AppResult;
+
+#[async_trait::async_trait]
+pub trait Validate<T> {
+    async fn validate(&self, val: T) -> AppResult<() >;
+}
+}
+pub use validator::*;
 
 pub use command_handler::CommandHandler;
 
