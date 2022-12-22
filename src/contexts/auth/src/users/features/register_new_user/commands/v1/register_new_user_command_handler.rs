@@ -14,6 +14,7 @@ impl CommandHandler<RegisterNewUserCommand> for AuthProvider {
 }
 
 async fn register_new_user_command(provider: &AuthProvider, cmd: RegisterNewUserCommand) -> AppResult<RegisterNewUserResponseDto> {
+    provider.validate(cmd).await?;
     todo!()
 
 }
